@@ -6,7 +6,7 @@
 /*   By: aschenk <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/12 11:57:54 by aschenk           #+#    #+#             */
-/*   Updated: 2014/11/21 16:03:56 by aschenk          ###   ########.fr       */
+/*   Updated: 2014/12/31 15:49:30 by aschenk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strtrim(char const *s)
 	char		*s_r;
 
 	if (!s || !*s)
-		return (NULL);
+		return ((char *)s);
 	len = ft_strlen(s);
 	if (!(s_dup = ft_strnew(len)))
 		return (NULL);

@@ -6,7 +6,7 @@
 #    By: aschenk <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/09 15:03:29 by aschenk           #+#    #+#              #
-#    Updated: 2014/11/21 16:08:43 by aschenk          ###   ########.fr        #
+#    Updated: 2014/12/31 12:16:40 by aschenk          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,11 +36,11 @@ $(O_DIR)%.o: $(C_DIR)%.c
 debug: _debug all clean
 
 clean:
-		@rm $(O_FILES) 2> /dev/null || echo "" > /dev/null
+		@rm -f $(O_FILES) 2> /dev/null || echo "" > /dev/null
 			@rmdir $(O_DIR) 2> /dev/null || echo "" > /dev/null
 
 fclean: clean
-		@rm $(NAME) 2> /dev/null || echo "" > /dev/null
+		@rm -rf $(NAME) 2> /dev/null || echo "" > /dev/null
 
 re: fclean all
 

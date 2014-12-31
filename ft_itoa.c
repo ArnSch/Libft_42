@@ -6,26 +6,28 @@
 /*   By: aschenk <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/13 16:17:20 by aschenk           #+#    #+#             */
-/*   Updated: 2014/11/21 15:34:10 by aschenk          ###   ########.fr       */
+/*   Updated: 2014/12/31 15:24:36 by aschenk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_countdigit(int nb, int digit)
+int		ft_countdigit(int nb)
 {
+	int		digit;
+
+	digit = 0;
 	if (nb < 0)
 	{
 		digit++;
 		nb *= -1;
 	}
-	if (nb / 10 == 0)
-		return (digit);
-	else
+	while (nb / 10 != 0)
 	{
-		digit += ft_countdigit(nb / 10, digit);
+		digit++;
+		nb /= 10;
 	}
-	return (digit + 1);
+	return (digit);
 }
 
 char	*ft_itoa(int n)
@@ -38,14 +40,13 @@ char	*ft_itoa(int n)
 		return (ft_strdup("-2147483648"));
 	last_index = 0;
 	i = 0;
-	i = ft_countdigit(n, i) + 1;
+	i = ft_countdigit(n) + 1;
 	if (!(num = ft_memalloc((size_t)(i))))
 		return (NULL);
 	if (n < 0)
 	{
 		num[0] = '-';
 		n *= -1;
-		i -= 2;
 		last_index = 1;
 	}
 	num[i] = '\0';

@@ -6,7 +6,7 @@
 /*   By: aschenk <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 13:19:27 by aschenk           #+#    #+#             */
-/*   Updated: 2014/11/21 15:56:12 by aschenk          ###   ########.fr       */
+/*   Updated: 2014/12/31 13:18:20 by aschenk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ char	*ft_strncpy(char *dst, const char *src, size_t n)
 	size_t		len;
 
 	count = 0;
-	len = ft_strlen(src);
 	if (!dst || !src || !n)
 		return (dst);
+	len = ft_strlen(src);
 	while (count < n)
 	{
 		if (count > len)
